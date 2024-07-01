@@ -1,0 +1,52 @@
+@import '../../index.scss';
+
+.search-bar {
+  form {
+    display: flex;
+    height: 64px;
+    gap: 5px;
+
+    @include sm {
+      flex-direction: column;
+      border: none;
+    }
+
+    input {
+      padding: 0px 10px;
+      width: 200px;
+
+      background-color: transparent;
+      border: none;
+      border-radius: 10px;
+
+      @include md {
+        padding: 10px;
+      }
+
+      &:focus {
+        border: 1px solid $primary;
+        outline: none;
+      }
+    }
+    a {
+      display: flex;
+      button {
+        border: none;
+        cursor: pointer;
+        background-color: $primary;
+        flex: 1;
+        width: 100px;
+
+        @include sm {
+          padding: 10px;
+        }
+
+        img {
+          width: 24px;
+          background-size: cover;
+          height: 24px;
+        }
+      }
+    }
+  }
+}

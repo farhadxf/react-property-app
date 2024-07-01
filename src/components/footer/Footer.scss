@@ -1,0 +1,28 @@
+@import '../../index.scss';
+
+.contact {
+  margin: 20px 0;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .contact-wrapper {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 300px;
+    border-bottom: 1px solid $primary;
+    padding-bottom: 5px;
+
+    @include md {
+      width: 100%;
+    }
+
+    .contact-icons {
+      display: flex;
+      gap: 20px;
+    }
+  }
+}

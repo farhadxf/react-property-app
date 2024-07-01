@@ -1,0 +1,185 @@
+@import '/src/index.scss';
+
+.navbar {
+  height: 85px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+
+  @include sm {
+    height: 40px;
+    justify-content: flex-start;
+  }
+
+  .logo {
+    align-items: center;
+
+    img {
+      height: 100%;
+      width: 200px;
+      cursor: pointer;
+
+      @include sm {
+        width: 100px;
+      }
+    }
+  }
+
+  .nav-menu-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin: 0px;
+    nav ul {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      justify-content: center;
+
+      @include sm {
+        flex-direction: column;
+      }
+
+      li {
+        margin: 10px 30px;
+        font-size: 20px;
+        cursor: pointer;
+
+        @include md {
+          margin: 0 10px;
+          font-size: 15px;
+        }
+        @include sm {
+          margin: 0;
+        }
+        a {
+          padding: 5px 25px;
+          color: inherit;
+          transition: color 0.4s ease-in-out;
+
+          @include md {
+            padding: 5px 5px;
+          }
+
+          &:hover {
+            text-shadow: 0 2px 4px rgb(238, 255, 0);
+          }
+        }
+      }
+
+      .nav-right {
+        a {
+          margin-right: 0px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 40px;
+          @include sm {
+            gap: 5px;
+            flex-direction: column;
+          }
+          img {
+            height: 40px;
+            width: 40px;
+            object-fit: cover;
+            border-radius: 100%;
+          }
+          .profile-text {
+            background-color: $primary;
+            padding: 10px;
+          }
+        }
+      }
+      .chat-li {
+        background: $primary;
+        padding: 0 10px;
+        @include md {
+          padding: 0 20px;
+        }
+
+        a {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+
+          span {
+            position: absolute;
+            text-align: center;
+            height: 40px;
+            width: 40px;
+            right: -20px;
+            top: -20px;
+            font-size: 2em;
+            border-radius: 100%;
+            background: $primary;
+            color: white;
+            @include md {
+              right: -40px;
+            }
+          }
+        }
+      }
+    }
+
+    .mobile-menu-icon {
+      display: none;
+    }
+
+    // mobile nav
+    @include sm {
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu-icon {
+        display: flex;
+        z-index: 20;
+        right: 0px;
+        padding: 10px;
+
+        position: absolute;
+        background: transparent;
+        color: inherit;
+        border: none;
+        outline: none;
+
+        font-size: 40px;
+      }
+
+      .nav-links-mobile {
+        overflow: hidden;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        list-style: none;
+        background-color: white;
+
+        li {
+          text-align: center;
+          transition: all 0.5s ease;
+          margin: 25px 0;
+          &:active {
+            color: #0ca34d;
+          }
+
+          a {
+            display: block;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+}

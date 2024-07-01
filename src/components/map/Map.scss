@@ -1,0 +1,9 @@
+@import '../../index.scss';
+
+.map {
+  height: 100%;
+
+  @include md {
+    height: 200px;
+  }
+}

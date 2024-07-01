@@ -1,0 +1,46 @@
+@import '../../index.scss';
+
+.list-page {
+  display: flex;
+  gap: 20px;
+  height: 100vh;
+
+  @include md {
+    flex-direction: column;
+  }
+
+  .list-container {
+    width: 70%;
+    height: 100%;
+
+    @include md {
+      width: 100%;
+      order: 2;
+    }
+
+    .wrapper {
+      height: 100%;
+      padding-right: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      overflow-y: scroll;
+      padding-bottom: 50px;
+
+      @include md {
+        overflow: visible;
+        padding: 0;
+      }
+    }
+  }
+
+  .map-container {
+    padding: 30px;
+    width: 30%;
+    z-index: 0;
+
+    @include md {
+      width: 100%;
+    }
+  }
+}
